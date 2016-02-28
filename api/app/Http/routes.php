@@ -30,5 +30,9 @@ Route::group(['middleware' => 'cors'], function(){
             'as' => 'auth.login',
             'uses' => 'AuthController@login'
         ]);
+        Route::get('/auth/user',[
+            'as' => 'auth.user',
+            'uses'=> 'AuthController@getAuthenticatedUser'
+        ]);// 'AuthenticateController@getAuthenticatedUser');
     });
 });
